@@ -1,13 +1,15 @@
 const express = require('express');
 const route = express.Router();
 const { createUser, getUserByEmail} = require('../service/user.service');
+const {buildResponse} = require('../helper/buildResponse');
 
 route.post('/', async (req,res)=>{
     try {
         const data = await createUser(req.body)
-        res.send(data);
+        console.log(data);
+        buildResponse(res, data, 200);
     } catch (error) {
-        res.send(error.message);
+        buildResponse(res, error.message, 400);
     }
 })
 route.get('/', async (req,res)=>{
