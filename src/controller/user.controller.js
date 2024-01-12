@@ -1,6 +1,6 @@
 const express = require('express');
 const route = express.Router();
-const { createUser, getUserByEmail} = require('../service/user.service');
+const { createUser, getUserByEmail, authUser} = require('../service/user.service');
 const {buildResponse} = require('../helper/buildResponse');
 
 route.post('/', async (req,res)=>{
@@ -18,6 +18,14 @@ route.get('/', async (req,res)=>{
         res.send(data);
     } catch (error) {
         res.send(error.message);
+    }
+})
+route.post('/auth', async (req, res)=>{
+    try {
+        const data = await authUser(req.body);
+        buildResponse(res, data, 200)
+    } catch (error) {
+        buildResponse(res, error.message, 400)
     }
 })
 
