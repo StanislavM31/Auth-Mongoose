@@ -10,7 +10,6 @@ async function createUserDB(user) {
 async function getUserByEmailDB(user) {
   /* TableUser.findOne --вернет объект*/
   const data = await TableUser.find({email: user.email});
-  console.log(data);
   return data
 }
 module.exports = { createUserDB, getUserByEmailDB };

@@ -4,7 +4,8 @@ const salt = 3;
 
 async function createUser(user){
     const foundUser = await getUserByEmailDB(user);
-    if(foundUser.length) throw new Error("this user already exist");
+    /* console.log(foundUser); */
+    if(foundUser.length) throw new Error("This user already exist");
     const hashPasssword = await bcrypt.hash(user.password, salt);
     const data = await createUserDB({...user, password: hashPasssword});
     if(!data.length) throw new Error('user is not created');
