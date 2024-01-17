@@ -1,0 +1,15 @@
+.header{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background-color:  rgb(135, 202, 127);;
+    font-size: 22px;
+    a{
+        text-decoration: none;
+        color:rgb(179, 120, 62);
+    }
+}
