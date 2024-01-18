@@ -8,10 +8,12 @@ export default function Auth() {
     <div>
       <Header />
       <div className={style.container}>
-        <h1>авторизация</h1>
-        <input placeholder="email" type="text" />
-        <input placeholder="password" type="text" />
-        <button>Sign up</button>
+        <h2>авторизация</h2>
+        <div className={style.form}>
+          <input placeholder="email" type="text" />
+          <input placeholder="password" type="text" />
+          <button>Sign up</button>
+        </div>
       </div>
     </div>
   );

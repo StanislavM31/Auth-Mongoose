@@ -6,7 +6,7 @@ export default function Home() {
     <div className={style.container}>
       <Header />
       <div className={style.form}>
-        <span>main page</span>
+        <h1>main page</h1>
       </div>
     </div>
   );

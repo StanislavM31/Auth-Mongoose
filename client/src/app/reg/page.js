@@ -7,7 +7,7 @@ export default function Registration() {
   return (
     <div className={style.container}>
       <Header />
-      <h1>регистрация</h1>
+      <h2>регистрация</h2>
       <div className={style.form}>
         <input placeholder="name..." type="text" />
         <input placeholder="surname..." type="text" />
