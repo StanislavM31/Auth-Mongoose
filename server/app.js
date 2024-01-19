@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser')
 const app = express();
+const cors = require('cors');
 const user = require('./src/controller/user.controller');
 
 app.use(cookieParser());

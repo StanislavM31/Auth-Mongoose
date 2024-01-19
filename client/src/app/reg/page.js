@@ -2,8 +2,10 @@
 
 import Header from "@/components/Header/Header";
 import style from "./page.module.scss";
+import { useState } from "react";
 
 export default function Registration() {
+  const [inp, setInp] = useState({name:"", surname:"", age:"",email:"", password:""})
   return (
     <div className={style.container}>
       <Header />
