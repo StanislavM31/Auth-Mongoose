@@ -6,17 +6,23 @@ import { useState } from "react";
 
 export default function Registration() {
   const [inp, setInp] = useState({name:"", surname:"", age:"",email:"", password:""})
+  function changeInput(e){
+    setInp({...inp, [e.target.name]: e.target.value});
+  }
+  function regUser(){
+    console.log(inp);
+  }
   return (
     <div className={style.container}>
       <Header />
       <h2>регистрация</h2>
       <div className={style.form}>
-        <input placeholder="name..." type="text" />
-        <input placeholder="surname..." type="text" />
-        <input placeholder="age..." type="text" />
-        <input placeholder="email" type="text" />
-        <input placeholder="password" type="text" />
-        <button>Sign up</button>
+        <input onChange={changeInput} placeholder="name..." type="text" />
+        <input onChange={changeInput} placeholder="surname..." type="text" />
+        <input onChange={changeInput} placeholder="age..." type="text" />
+        <input onChange={changeInput} placeholder="email" type="text" />
+        <input onChange={changeInput} placeholder="password" type="text" />
+        <button onClick={regUser}>Sign up</button>
       </div>
     </div>
   );
