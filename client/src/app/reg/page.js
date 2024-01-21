@@ -3,14 +3,16 @@
 import Header from "@/components/Header/Header";
 import style from "./page.module.scss";
 import { useState } from "react";
+import axios from "axios";
 
 export default function Registration() {
   const [inp, setInp] = useState({name:"", surname:"", age:"",email:"", password:""})
   function changeInput(e){
     setInp({...inp, [e.target.name]: e.target.value});
   }
-  function regUser(){
+  async function regUser(){
     console.log(inp);
+    /* const res = axios.post(""); */
   }
   return (
     <div className={style.container}>
