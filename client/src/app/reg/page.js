@@ -11,19 +11,21 @@ export default function Registration() {
     setInp({...inp, [e.target.name]: e.target.value});
   }
   async function regUser(){
-    console.log(inp);
-    /* const res = axios.post(""); */
+    const data = axios.post("http://localhost:3001/", inp, {
+      withCredentials: true
+    })
+    console.log(data);
   }
   return (
     <div className={style.container}>
       <Header />
       <h2>регистрация</h2>
       <div className={style.form}>
-        <input onChange={changeInput} placeholder="name..." type="text" />
-        <input onChange={changeInput} placeholder="surname..." type="text" />
-        <input onChange={changeInput} placeholder="age..." type="text" />
-        <input onChange={changeInput} placeholder="email" type="text" />
-        <input onChange={changeInput} placeholder="password" type="text" />
+        <input onChange={changeInput} name="name" placeholder="name..." type="text" />
+        <input onChange={changeInput} name="surname" placeholder="surname..." type="text" />
+        <input onChange={changeInput} name="age" placeholder="age..." type="text" />
+        <input onChange={changeInput} name="email" placeholder="email" type="text" />
+        <input onChange={changeInput} name="password" placeholder="password" type="text" />
         <button onClick={regUser}>Sign up</button>
       </div>
     </div>
